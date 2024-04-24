@@ -4,7 +4,14 @@ from django.views import View
 
 class IndexShopView(View):
     def get(self, requesst):
-        return render(requesst, 'home/index.html')
+        context = {'data': [{'name': 'Bell Peper',
+                             'discount': 30,
+                             'price_before': 120.00,
+                             'price_after': 80.00,
+                             'url': 'store/images/product-1.jpg'}
+                            ]
+                   }
+        return render(requesst, 'home/index.html', context)
 
 
 class AboutSopView(View):
